@@ -1,31 +1,19 @@
 <?php
 	
-	require 'conexion.php';
-
+	require 'conexioncrud.php';
 	$id = $_POST['id'];
-	$nombre = $_POST['nombre'];
-	$email = $_POST['email'];
-	$telefono = $_POST['telefono'];
-	$estado_civil = $_POST['estado_civil'];
-	$hijos = isset($_POST['hijos']) ? $_POST['hijos'] : 0;
-	$intereses = isset($_POST['intereses']) ? $_POST['intereses'] : null;
+	$tipo_maquinaria = $_POST['tipo_maquinaria'];
+	$id_maquinaria= $_POST['id_maquinaria'];
+	$marca = $_POST['marca'];
+	$modelo = $_POST['modelo'];
+	$horas_trabajadas = $_POST['horas_trabajadas'];
+	$operario_encargado = $_POST['operario_encargado'];
+	$estado = $_POST['estado'];
+	$observaciones = $_POST['observaciones'];
 	
-	$arrayIntereses = null;
 	
-	$num_array = count($intereses);
-	$contador = 0;
 	
-	if($num_array>0){
-		foreach ($intereses as $key => $value) {
-			if ($contador != $num_array-1)
-			$arrayIntereses .= $value.' ';
-			else
-			$arrayIntereses .= $value;
-			$contador++;
-		}
-	}
-	
-	$sql = "UPDATE personas SET nombre='$nombre', correo='$email', telefono='$telefono', estado_civil='$estado_civil', hijos='$hijos', intereses='$arrayIntereses' WHERE id = '$id'";
+	$sql = "UPDATE equipos SET tipo_maquinaria='$tipo_maquinaria', id_maquinaria='$id_maquinaria', marca='$marca', modelo='$modelo', horas_trabajadas='$horas_trabajadas', operario_encargado='$operario_encargado', estado='$estado', observaciones='$observaciones',' WHERE id = '$id'";
 	$resultado = $mysqli->query($sql);
 	
 ?>
@@ -50,7 +38,7 @@
 				<h3>ERROR AL MODIFICAR</h3>
 				<?php } ?>
 				
-				<a href="index.php" class="btn btn-primary">Regresar</a>
+				<a href="hojacreada.php" class="btn btn-primary">Regresar</a>
 				
 				</div>
 			</div>
