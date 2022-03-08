@@ -13,7 +13,7 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8" />
@@ -103,6 +103,7 @@
     <br>
     <br>
     <br>
+	
     
     <?phP
 	require 'conexioncrud.php';
@@ -127,7 +128,7 @@
 			
 			<div class="row">
 				<a href="hoja_de_vida.php" class="btn btn-primary">Agregar Equipo</a>
-				
+				<BR>
 				<form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
 					<b>EQUIPO1: </b><input type="text" id="campo" name="campo" />
 					<input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-info" />
@@ -177,19 +178,21 @@
 		<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					
+				<center>
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						
 						<h4 class="modal-title" id="myModalLabel">Eliminar Registro</h4>
+						
 					</div>
-					
+					</center>
 					<div class="modal-body">
 						¿Desea eliminar este registro?
 					</div>
 					
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-						<a class="btn btn-danger btn-ok">Delete</a>
+						<a class="btn btn-danger btn-ok">ELIMINAR</a>
 					</div>
 				</div>
 			</div>
@@ -206,9 +209,9 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2020</div>
+                            <div class="text-muted">Copyright &copy; ddiltec 2022</div>
                             <div>
-                                <a href="#">Privacy Policy</a>
+                                <a href="#">Poloticas de privacidad</a>
                                 &middot;
                                 <a href="#">Terms &amp; Conditions</a>
                             </div>

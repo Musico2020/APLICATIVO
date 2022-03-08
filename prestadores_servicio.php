@@ -116,7 +116,7 @@
             
               
             
-          </div>
+            </div>
         </div>
         <div class="sb-sidenav-footer">
           <div class="small">Logged in as:</div>
@@ -126,49 +126,54 @@
     </div>
     <div id="layoutSidenav_content">
       <main>
-        <div class="container-fluid">
-          <h1 class="mt-4">Equipos</h1>
-          <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Equipo 1</li>
-          </ol>
-          <div class="row">
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-primary text-white mb-4">
-                <div class="card-body">Hoja De Vida</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">Detalles</a>
-                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-warning text-white mb-4">
-                <div class="card-body">Lista de chequeo</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">detalles</a>
-                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-success text-white mb-4">
-                <div class="card-body">Plan De Trabajo</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">Detalles</a>
-                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-danger text-white mb-4">
-                <div class="card-body">Historia</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">Detalles</a>
-                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
-              </div>
-            </div>
-          </div>
+	  <div class="container">
+			<div class="row">
+				<h3 style="text-align:center">Prestadores de Servicio</h3>
+			</div>
+			
+			<form class="form-horizontal" method="POST" action="guardar.php" autocomplete="off">
+				<div class="form-group">
+					<label for="nombre_tecnico" class="col-sm-2 control-label">Nombre Del Tecnico</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="nombre_tecnico" name="nombre_tenico" placeholder="Nombre del Tecnico" required>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="id_Tecnico" class="col-sm-2 control-label">id Tecnico</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="id_Tecnico" name="id_Tecnico" placeholder="id Tecnico" required>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="Nombre_Maquina" class="col-sm-2 control-label">Nombre de la Maquina</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="Nombre_Maquina" name="Nombre_Maquina" placeholder="Nombre de la Maquina">
+					</div>
+				</div>
+                <div class="form-group">
+					<label for="Tiempo_Mantenimiento" class="col-sm-2 control-label">Tiempo de Mantenimiento</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="Tiempo_Mantenimiento" name="Tiempo_Mantenimiento" placeholder="Tiempo de Mantenimiento">
+					</div>
+				</div>
+                <div class="form-group">
+					<label for="Fecha" class="col-sm-2 control-label">Fecha</label>
+					<div class="col-sm-10">
+						<input type="date" class="form-control" id="Fecha" name="Fecha" placeholder="Fecha">
+					</div>
+				</div>
+
+				
+				
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<a href="hojacreada.php" class="btn btn-default">Regresar</a>
+						<button type="submit" class="btn btn-primary">Guardar</button>
+					</div>
+				</div>
+			</form>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">

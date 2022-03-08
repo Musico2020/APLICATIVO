@@ -1,10 +1,10 @@
 <?php
 	
-	require 'conexion.php';
+	require 'conexioncrud.php';
 
 	$id = $_GET['id'];
 	
-	$sql = "DELETE FROM personas WHERE id = '$id'";
+	$sql = "DELETE FROM equipos WHERE id = '$id'";
 	$resultado = $mysqli->query($sql);
 	
 ?>
@@ -29,7 +29,7 @@
 				<h3>ERROR AL ELIMINAR</h3>
 				<?php } ?>
 				
-				<a href="index.php" class="btn btn-primary">Regresar</a>
+				<a href="hojacreada.php" class="btn btn-primary">Regresar</a>
 				
 				</div>
 			</div>

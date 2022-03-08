@@ -1,19 +1,31 @@
+<!DOCTYPE html>
+<?php
+include('conexionagenda.php');
+
+$tmp = array();
+$res = array();
+
+$sel = $con->query("SELECT * FROM agenda");
+while ($row = $sel->fetch_assoc()) {
+    $tmp = $row;
+    array_push($res, $tmp);
+}
+?>
 <?php
 
-  session_start();
+session_start();
 
-  if (!isset($_SESSION['id'])) {
+if (!isset($_SESSION['id'])) {
 
-    header('Location: index.php');
+  header('Location: index.php');
 
-  }
+}
 
-  $nombre = $_SESSION['nombre'];
-  $tipo_usuario = $_SESSION['tipo_usuario'];
+$nombre = $_SESSION['nombre'];
+$tipo_usuario = $_SESSION['tipo_usuario'];
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8" />
@@ -22,6 +34,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <title>M&MSOFT</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link href="css/styles.css" rel="stylesheet" />
   <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
     crossorigin="anonymous" />
@@ -127,48 +140,134 @@
     <div id="layoutSidenav_content">
       <main>
         <div class="container-fluid">
-          <h1 class="mt-4">Equipos</h1>
+          <h1 class="mt-4">Orden De Trabajo</h1>
           <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Equipo 1</li>
+            <li class="breadcrumb-item active">formulario</li>
           </ol>
-          <div class="row">
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-primary text-white mb-4">
-                <div class="card-body">Hoja De Vida</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">Detalles</a>
-                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+          <div class="container">
+			<div class="row">
+				<h3 style="text-align:center">Crear Orden de Trabajo</h3>
+			</div>
+			
+      <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-md-auto">
+                    <h1>Subir Archivos</h1>
                 </div>
-              </div>
             </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-warning text-white mb-4">
-                <div class="card-body">Lista de chequeo</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">detalles</a>
-                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            <div class="row justify-content-md-center">
+                <div class="col-8">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Nuevo
+                    </button>
+
+                    <table class="table mt-2">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">titulo</th>
+                                <th scope="col">descripcion</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($res as $val) { ?>
+                                <tr>
+                                    <td><?php echo $val['id'] ?> </td>
+                                    <td><?php echo $val['title'] ?></td>
+                                    <td><?php echo $val['description'] ?></td>
+                                    <td>
+                                        <button onclick="openModelPDF('<?php echo $val['url'] ?>')" class="btn btn-primary" type="button">Ver Archivo Modal</button>
+                                        <a class="btn btn-primary" target="_black" href="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/uploadfile/' . $val['url']; ?>" >Ver Archivo pagina</a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
                 </div>
-              </div>
             </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-success text-white mb-4">
-                <div class="card-body">Plan De Trabajo</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">Detalles</a>
-                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Nuevo archivo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form enctype="multipart/form-data" id="form1">
+                            <div class="form-group">
+                                <label for="title">Titulo</label>
+                                <input type="text" class="form-control" id="title" name="title">
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Descripcion</label>
+                                <input type="text" class="form-control" id="description" name="description">
+                            </div>
+                            <div class="form-group">
+                                <label for="description">archivo</label>
+                                <input type="file" class="form-control" id="file" name="file">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" onclick="onSubmitForm()">Cuardar</button>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-danger text-white mb-4">
-                <div class="card-body">Historia</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">Detalles</a>
-                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+        </div>
+        <div class="modal fade" id="modalPdf" tabindex="-1" aria-labelledby="modalPdf" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ver archivo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe id="iframePDF" frameborder="0" scrolling="no" width="100%" height="500px"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script>
+                            function onSubmitForm() {
+                                var frm = document.getElementById('form1');
+                                var data = new FormData(frm);
+                                var xhttp = new XMLHttpRequest();
+                                xhttp.onreadystatechange = function () {
+                                    if (this.readyState == 4) {
+                                        var msg = xhttp.responseText;
+                                        if (msg == 'success') {
+                                            alert(msg);
+                                            $('#exampleModal').modal('hide')
+                                        } else {
+                                            alert(msg);
+                                        }
+
+                                    }
+                                };
+                                xhttp.open("POST", "upload.php", true);
+                                xhttp.send(data);
+                                $('#form1').trigger('reset');
+                            }
+                            function openModelPDF(url) {
+                                $('#modalPdf').modal('show');
+                                $('#iframePDF').attr('src','<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/uploadfile/'; ?>'+url);
+                            }
+        </script>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">

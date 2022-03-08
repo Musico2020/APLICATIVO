@@ -31,7 +31,7 @@
 
 <body class="sb-nav-fixed">
   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">M&MSOFT SISTEMA DE GESTION Y MANTENIMIENTO</a>
+    <a class="navbar-brand" href="dashboard.php">M&MSOFT SISTEMA DE GESTION Y MANTENIMIENTO</a>
     <button class="btn btn-link btn-sm order-3 order-lg-2" id="sidebarToggle" href="#"><i
         class="fas fa-bars"></i></button>
     <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -145,7 +145,7 @@
               <div class="card bg-warning text-white mb-4">
                 <div class="card-body">Lista de chequeo</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="lista_de_chequeo.php">detalles</a>
+                  <a class="small text-white stretched-link" href="listahequeo.php">detalles</a>
                   <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
               </div>
@@ -154,7 +154,7 @@
               <div class="card bg-success text-white mb-4">
                 <div class="card-body">Plan De Trabajo</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">Detalles</a>
+                  <a class="small text-white stretched-link" href="plantrabajo.php">Detalles</a>
                   <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
               </div>
@@ -163,7 +163,7 @@
               <div class="card bg-danger text-white mb-4">
                 <div class="card-body">Historia</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">Detalles</a>
+                  <a class="small text-white stretched-link" href="historia.php">Detalles</a>
                   <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
               </div>

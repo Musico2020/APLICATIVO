@@ -77,7 +77,7 @@
                 <a class="nav-link" href="orden_de_trabajo.php">Orden de Trabajos</a>
                 <a class="nav-link" href="salida_de_almacen.php">Salida de Almacen</a>
                 <a class="nav-link" href="planes_mantenimiento.php">Planes de Mantenimiento</a>
-                <a class="nav-link" href="prestadores_servicios.php">Prestadores de Servicios</a>
+                <a class="nav-link" href="prestadores_servicio.php">Prestadores de Servicios</a>
                 <a class="nav-link" href="agenda.php">Agenda</a>
               </nav>
             </div>
@@ -134,7 +134,7 @@
               <div class="card bg-primary text-white mb-4">
                 <div class="card-body">Planes Preventivos</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">Detalles</a>
+                  <a class="small text-white stretched-link" href="planespreventivos.php">Detalles</a>
                   <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
               </div>
@@ -143,7 +143,7 @@
               <div class="card bg-warning text-white mb-4">
                 <div class="card-body">planes correctivos</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">detalles</a>
+                  <a class="small text-white stretched-link" href="planescorrectivos.php">detalles</a>
                   <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
               </div>
@@ -153,7 +153,7 @@
               <div class="card bg-danger text-white mb-4">
                 <div class="card-body">Historia</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">Detalles</a>
+                  <a class="small text-white stretched-link" href="historia.php">Detalles</a>
                   <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
               </div>

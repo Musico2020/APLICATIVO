@@ -77,7 +77,7 @@
                 <a class="nav-link" href="orden_de_trabajo.php">Orden de Trabajos</a>
                 <a class="nav-link" href="salida_de_almacen.php">Salida de Almacen</a>
                 <a class="nav-link" href="planes_mantenimiento.php">Planes de Mantenimiento</a>
-                <a class="nav-link" href="prestadores_servicios.php">Prestadores de Servicios</a>
+                <a class="nav-link" href="prestadores_servicio.php">Prestadores de Servicios</a>
                 <a class="nav-link" href="agenda.php">Agenda</a>
               </nav>
             </div>
@@ -119,56 +119,17 @@
           </div>
         </div>
         <div class="sb-sidenav-footer">
-          <div class="small">Logged in as:</div>
-          Start Bootstrap
+          <div class="small">DDILTEC:</div>
+          BY YESICA PAOLA GARCIA
         </div>
       </nav>
     </div>
     <div id="layoutSidenav_content">
       <main>
         <div class="container-fluid">
-          <h1 class="mt-4">Equipos</h1>
-          <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Equipo 1</li>
-          </ol>
-          <div class="row">
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-primary text-white mb-4">
-                <div class="card-body">Hoja De Vida</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">Detalles</a>
-                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-warning text-white mb-4">
-                <div class="card-body">Lista de chequeo</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">detalles</a>
-                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-success text-white mb-4">
-                <div class="card-body">Plan De Trabajo</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">Detalles</a>
-                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-danger text-white mb-4">
-                <div class="card-body">Historia</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">Detalles</a>
-                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h1 class="mt-4">Administracion</h1>
+          
+          <img src="imagen/ima2.jpg" width="1080" height="400">
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
